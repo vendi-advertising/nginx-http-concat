@@ -107,6 +107,8 @@ class WPcom_CSS_Concat extends WP_Styles {
 			unset( $this->to_do[$key] );
 		}
 
+		$stylesheets = apply_filters('ngx_http_concat_stylesheets', $stylesheets);
+
 		foreach( $stylesheets as $idx => $stylesheets_group ) {
 			foreach( $stylesheets_group as $media => $css ) {
 				if ( 'noconcat' == $media ) {
